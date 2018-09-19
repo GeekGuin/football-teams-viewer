@@ -1,0 +1,10 @@
+.default {
+  transform: rotate(90deg);
+  display: inline-block;
+  position: relative;
+}
+
+.image {
+  width: 500px;
+  height: 400px;
+}
