@@ -1,6 +1,14 @@
-.container { /* Jugadores */
+.defaultContainer { /* Jugadores */
   position: absolute;
   transform: rotate(270deg);
+  transition: z-index step-end 0.4s ;
+  z-index: 1;
+}
+
+.activeContainer{
+  composes: defaultContainer;
+  transition: z-index step-start 0.4s;
+  z-index: 2;
 }
 
 .players {
@@ -10,7 +18,7 @@
   background: rgba(231, 14, 14, 0.918);
   width: 25px;
   align-self: center;
-  cursor: pointer; 
+  cursor: pointer;
   border: 3px solid gainsboro;
   color: goldenrod;
 }
@@ -32,13 +40,11 @@
   transition: opacity ease 0.4s;
   pointer-events: none;
   backface-visibility: hidden;
-  z-index: 10;
   color: white;
 }
 
 .activeContent { /* Tooltip enabled */
   composes: defaultContent;
-  z-index: 10;
   opacity: 1;
 }
 
@@ -56,12 +62,10 @@
   transform: translate(-50%, 50%);
   transition: opacity ease 0.4s;
   pointer-events: none;
-  z-index: 10;
   backface-visibility: hidden;
 }
 
 .activeArrow {
   composes: defaultArrow;
-  z-index: 10;
   opacity: 1;
 }
