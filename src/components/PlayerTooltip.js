@@ -6,7 +6,7 @@ export default class PlayerTooltip extends Component {
   state = { isOpen: false };
   render() {
     return (
-      <div className={css.container} style={this.props.position}>
+      <div className={this.state.isOpen ? css.activeContainer : css.defaultContainer} style={this.props.position}>
         <div className={css.players} onMouseEnter={this.openTooltip} onMouseLeave={this.closeTooltip} >
           <span>{this.props.number}</span>
         </div>
