@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import css from "./css/PlayerTooltip.css";
+import PlayerPreview from './PlayerPreview';
 
 export default class PlayerTooltip extends Component {
   state = { isOpen: false };
@@ -10,10 +11,7 @@ export default class PlayerTooltip extends Component {
         <div className={css.players} onMouseEnter={this.openTooltip} onMouseLeave={this.closeTooltip} >
           <span>{this.props.number}</span>
         </div>
-        <div className={this.state.isOpen ? css.activeArrow : css.defaultArrow} />
-        <section className={this.state.isOpen ? css.activeContent : css.defaultContent}>
-          {this.props.name}
-        </section>
+        <PlayerPreview isOpen={this.state.isOpen} name={this.props.name} img={this.props.img} />
       </div>
     );
   }
